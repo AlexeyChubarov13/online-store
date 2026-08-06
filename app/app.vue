@@ -1,6 +1,5 @@
 <template>
-  <div class="shop-page">
-    <LayoutHeader />
-    <LayoutSidebar />
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
