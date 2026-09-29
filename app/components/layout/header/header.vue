@@ -1,19 +1,20 @@
 <template>
     <header class="header">
       <div class="header__logo">
-        <span>Shop</span>
+        <Icon name="icons:logo" class="header__logo-icon" />
       </div>
   
       <div class="header__search">
         <input type="text" class="header__input" placeholder="Search" />
         <button type="button">
-          Search
+          <Icon name="icons:search" size="20" />
         </button>
       </div>
   
       <div class="header__actions">
         <button type="button" class="currency__button">
-          USD
+          <span>USD</span>
+          <Icon name="icons:arrow" size="8" />
         </button>
   
         <button type="button" aria-label="Favorites">
@@ -26,3 +27,5 @@
       </div>
     </header>
   </template>
+
+<style scoped lang="scss" src="./header.scss"></style>

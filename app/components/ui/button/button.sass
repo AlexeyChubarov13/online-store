@@ -1,0 +1,169 @@
+.ui-btn
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: var(--space-2)
+    position: relative
+    width: fit-content
+    min-width: 0
+    overflow: hidden
+    border: 1px solid transparent
+    border-radius: var(--radius-full)
+    font-family: var(--font-main)
+    font-weight: 500
+    line-height: 1
+    letter-spacing: 0
+    white-space: nowrap
+    cursor: pointer
+    transition: color 180ms ease-out, border-color 180ms ease-out, background-color 180ms ease-out, box-shadow 180ms ease-out, transform 180ms ease-out
+    min-width: 9.75rem
+    min-height: 3.5rem
+    padding: 1.25rem 2rem
+    font-size: 1rem
+    line-height: 1rem
+    color: #ffffff
+    background: var(--color-txt)
+        
+
+    &:hover:not(:disabled)
+        transform: translateY(-1px)
+        box-shadow: 0 8px 22px -8px rgb(7 26 47 / 0.12)
+        background: var(--color-txt)
+
+    &:active:not(:disabled)
+        transform: translateY(0) scale(0.98)
+        box-shadow: inset 0 2px 6px 0 rgb(0 0 0 / 0.14)
+        background: var(--color-txt)
+
+    &:disabled
+        opacity: 0.6
+        cursor: not-allowed
+
+    &.--sm
+        min-width: 7.3125rem
+        min-height: 2.5rem
+        padding: 0.8125rem 1.125rem
+        font-size: 0.875rem
+        line-height: 0.875rem
+
+    &.--md
+        min-width: 9.75rem
+        min-height: 3.5rem
+        padding: 1.25rem 2rem
+        font-size: 1rem
+        line-height: 1rem
+
+    &.--lg
+        min-width: 9.75rem
+        min-height: 3.5rem
+        padding: 1.25rem 2rem
+        font-size: 1rem
+        line-height: 1rem
+
+    &.--primary
+        color: #ffffff
+        background: var(--color-txt)
+
+    &.--primary:hover:not(:disabled)
+        background: var(--color-txt)
+
+    &.--primary:active:not(:disabled)
+        background: var(--color-txt)
+
+    &.--accent
+        color: var(--color-txt)
+        background: var(--color-pri)
+
+    &.--accent:hover:not(:disabled)
+        background: var(--color-pri-h)
+
+    &.--accent:active:not(:disabled)
+        background: #a4d80f
+
+    &.--secondary
+        color: var(--color-txt)
+        border-color: var(--color-line)
+        background: transparent
+
+    &.--secondary:hover:not(:disabled)
+        border-color: var(--color-line)
+        background: #f5f7fa
+
+    &.--secondary:active:not(:disabled)
+        background: #f5f7fa
+
+    &.--ghost
+        color: rgb(255 255 255 / 0.94)
+        border-color: rgb(255 255 255 / 0.28)
+        background: rgb(255 255 255 / 0.18)
+        box-shadow: 0 12px 28px -14px rgb(0 0 0 / 0.1)
+        backdrop-filter: blur(11px)
+        -webkit-backdrop-filter: blur(11px)
+
+    &.--ghost:hover:not(:disabled)
+        background: rgb(255 255 255 / 0.18)
+
+    &.--circle
+        flex: 0 0 auto
+        width: 2.625rem
+        height: 2.625rem
+        min-width: 2.625rem
+        min-height: 2.625rem
+        aspect-ratio: 1 / 1
+        padding: 0
+        gap: 0
+        color: var(--color-txt)
+        border-color: transparent
+        background: var(--color-card)
+        box-shadow: var(--shadow-btn-soft)
+
+    &.--circle:hover:not(:disabled)
+        background: var(--color-card)
+
+    &.--circle:active:not(:disabled)
+        background: var(--color-card)
+
+    &.--circle svg
+        font-size: 0.875rem
+
+    &.--circle-ghost
+        flex: 0 0 auto
+        width: 2.625rem
+        height: 2.625rem
+        min-width: 2.625rem
+        min-height: 2.625rem
+        aspect-ratio: 1 / 1
+        padding: 0
+        gap: 0
+        color: #ffffff
+        border-color: rgb(255 255 255 / 0.92)
+        background: transparent
+        box-shadow: 0 0 0 1px rgb(255 255 255 / 0.24), 0 0.75rem 1.75rem -0.875rem rgb(255 255 255 / 0.45)
+
+    &.--circle-ghost:hover:not(:disabled)
+        color: var(--color-txt)
+        border-color: var(--color-pri)
+        background: var(--color-pri)
+        box-shadow: 0 0.75rem 1.75rem -0.875rem rgb(181 230 24 / 0.55)
+
+    &.--circle-ghost:active:not(:disabled)
+        color: var(--color-txt)
+        border-color: var(--color-pri)
+        background: var(--color-pri)
+
+    &.--circle-ghost svg
+        font-size: 0.875rem
+    
+    svg
+        font-size: 2rem
+
+    &__icon
+        font-size: 2rem
+        flex: 0 0 auto
+
+        &.--spin
+            animation: ui-btn-spin 900ms linear infinite
+
+@keyframes ui-btn-spin
+    to
+        transform: rotate(360deg)

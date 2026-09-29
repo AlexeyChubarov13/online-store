@@ -1,0 +1,146 @@
+.ui-field
+    display: grid
+    gap: var(--space-2)
+    width: 100%
+    font-family: var(--font-main)
+
+    &__control
+        display: flex
+        align-items: center
+        width: 100%
+        min-height: 3.5rem
+        padding: 1.1875rem 1rem
+        overflow: hidden
+        color: var(--color-txt)
+        border: 1px solid var(--color-field-border)
+        border-radius: var(--radius-field)
+        background: var(--color-field-surface)
+        cursor: text
+        transition: (border-color var(--ease),
+            box-shadow var(--ease),
+            background-color var(--ease),
+            opacity var(--ease))
+
+        &:hover:not(.--disabled)
+            background: var(--color-card)
+            box-shadow: var(--shadow-field-hover)
+
+        &:focus-within:not(.--disabled)
+            border-color: var(--color-pri)
+            background: var(--color-card)
+            box-shadow: var(--shadow-field-focus)
+
+            .ui-field__floating-label
+                color: var(--color-pri)
+
+        &.--has-label
+            flex-direction: column
+            align-items: flex-start
+            gap: 0.4375rem
+            padding-block: 0.5625rem
+
+        &.--select
+            position: relative
+            padding-right: 2.5rem
+            cursor: pointer
+
+            &::after
+                content: ''
+                position: absolute
+                top: 50%
+                right: 1rem
+                width: 0
+                height: 0
+                border-inline: 0.28125rem solid transparent
+                border-top: 0.375rem solid var(--color-field-chevron)
+                transform: translateY(-25%)
+                pointer-events: none
+
+        &.--textarea
+            align-items: flex-start
+            min-height: 7rem
+            padding: 0.5rem 0.9375rem
+
+            &.--has-label
+                gap: 0.625rem
+                padding-block: 0.5rem
+
+        &.--invalid
+            color: var(--color-field-error)
+            border-color: var(--color-field-error)
+            background: var(--color-card)
+            box-shadow: var(--shadow-field-error)
+
+            .ui-field__floating-label
+                color: var(--color-field-error)
+
+            .ui-field__native.--empty,
+            .ui-field__native::placeholder
+                color: var(--color-field-error)
+
+        &.--disabled
+            color: var(--color-txt-2)
+            background: var(--color-field-disabled)
+            opacity: 0.58
+            cursor: not-allowed
+            box-shadow: none
+
+    &__floating-label
+        width: 100%
+        color: var(--color-txt-2)
+        font-size: 0.6875rem
+        font-weight: 500
+        line-height: 0.75rem
+        letter-spacing: 0.02em
+
+    &__native
+        display: block
+        width: 100%
+        min-width: 0
+        padding: 0
+        color: var(--color-txt)
+        border: 0
+        outline: 0
+        background: transparent
+        box-shadow: none
+        font-family: var(--font-main)
+        font-size: 0.9375rem
+        font-weight: 400
+        line-height: 1.125rem
+        letter-spacing: 0
+
+        &::placeholder
+            color: var(--color-txt-2)
+            opacity: 1
+
+        &:disabled
+            color: var(--color-txt-2)
+            opacity: 1
+            cursor: not-allowed
+            -webkit-text-fill-color: var(--color-txt-2)
+
+        &.--empty
+            color: var(--color-txt-2)
+
+    &__help
+        color: var(--color-txt-2)
+        font-size: var(--text-xs)
+        line-height: 1rem
+
+    &__error
+        color: var(--color-field-error)
+        font-size: var(--text-xs)
+        font-weight: 500
+        line-height: 1rem
+
+select.ui-field__native
+    appearance: none
+    cursor: inherit
+
+textarea.ui-field__native
+    min-height: 4.625rem
+    line-height: 1.375rem
+    resize: none
+
+.ui-field__control.--textarea:not(.--has-label) textarea.ui-field__native
+    min-height: 6rem

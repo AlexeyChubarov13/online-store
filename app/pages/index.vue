@@ -1,3 +1,3 @@
 <template>
-    <LayoutMainMain />
+    <Catalog />
 </template>

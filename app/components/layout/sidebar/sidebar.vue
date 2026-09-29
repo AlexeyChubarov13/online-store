@@ -38,3 +38,5 @@ const categories = [
         </nav>
     </div>
 </template>
+
+<style scoped lang="scss" src="./sidebar.scss"></style>

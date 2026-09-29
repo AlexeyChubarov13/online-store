@@ -1,0 +1,17 @@
+@use '~/assets/styles/functions' as *;
+
+.app {
+    min-height: 100vh;
+    background: #f7f7f9;
+  }
+  
+  .shop__layout {
+    display: grid;
+    grid-template-columns: rem(320) minmax(0, 1fr);
+    align-items: start;
+  }
+  
+  .content {
+    min-width: 0;
+    padding: rem(40) rem(64) rem(72);
+  }

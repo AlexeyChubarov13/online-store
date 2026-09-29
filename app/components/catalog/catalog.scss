@@ -1,0 +1,35 @@
+@use '~/assets/styles/functions' as *;
+
+.catalog {
+  width: 100%;
+  padding-top: rem(56);
+}
+
+.catalog__breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+    margin-bottom: rem(12);
+    font-size: rem(12);
+    line-height: rem(16);
+    font-weight: 400;
+    color: #8387A3
+}
+
+.catalog__breadcrumb--active {
+    color: rgba(70, 73, 92, 0.24);
+}
+
+.catalog__title {
+  margin: 0 0 rem(32);
+  font-size: rem(28);
+  line-height: 1.2;
+  font-weight: 700;
+  color: #46495c;
+}
+
+.catalog__products {
+  display: grid;
+  grid-template-columns: repeat(3, rem(401));
+  gap: rem(24);
+}

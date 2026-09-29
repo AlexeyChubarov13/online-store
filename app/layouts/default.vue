@@ -1,9 +1,9 @@
 <template>
     <div class="app">
-      <LayoutHeaderHeader />
+      <LayoutHeader />
   
       <div class="shop__layout">
-        <LayoutSidebarSidebar />
+        <LayoutSidebar />
   
         <main class="content">
           <slot />
@@ -11,3 +11,5 @@
       </div>
     </div>
 </template>
+
+<style scoped lang="scss" src="./default.scss"></style>

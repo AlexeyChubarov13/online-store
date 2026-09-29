@@ -4,6 +4,12 @@ export default defineNuxtConfig({
   modules: ['@nuxt/icon', '@nuxt/image'],
   devtools: { enabled: true }, 
 
+  css: [
+    '~/assets/styles/fonts.scss',
+    '~/assets/styles/reset.sass',
+    '~/assets/styles/variables.sass'
+  ],
+
   devServer: {
     host: '127.0.0.1',
     port: 3000
