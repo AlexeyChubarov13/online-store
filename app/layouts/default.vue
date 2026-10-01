@@ -8,7 +8,11 @@
         <main class="content">
           <slot />
         </main>
+
       </div>
+
+      <LayoutFooter />
+      
     </div>
 </template>
 

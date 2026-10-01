@@ -1,0 +1,118 @@
+@use '~/assets/styles/functions' as *;
+
+.footer {
+  min-height: rem(240);
+  padding: rem(48) rem(56);
+  background: #4b5064;
+  color: #ffffff;
+
+  display: grid;
+  grid-template-columns: rem(300) rem(160) 1fr rem(180);
+  column-gap: rem(72);
+}
+
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__logo {
+  width: rem(125);
+  height: auto;
+  margin-bottom: rem(24);
+}
+
+.footer__phones {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8);
+  margin-bottom: rem(16);
+
+  a {
+    color: #ffffff;
+    font-size: rem(18);
+    line-height: rem(24);
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
+
+.footer__address {
+  color: rgba(255, 255, 255, 0.45);
+  font-style: normal;
+  font-size: rem(12);
+  line-height: rem(16);
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20);
+
+  a {
+    color: #ffffff;
+    font-size: rem(16);
+    line-height: rem(22);
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
+.footer__catalog {
+  h2 {
+    margin: 0 0 rem(18);
+    color: #ffffff;
+    font-size: rem(16);
+    line-height: rem(22);
+    font-weight: 700;
+  }
+}
+
+.footer__catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(rem(130), max-content));
+  column-gap: rem(40);
+  row-gap: rem(12);
+
+  a {
+    color: rgba(255, 255, 255, 0.42);
+    font-size: rem(13);
+    line-height: rem(18);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+}
+
+.footer__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: rgba(255, 255, 255, 0.45);
+
+  p,
+  a {
+    margin: 0 0 rem(12);
+    color: rgba(255, 255, 255, 0.45);
+    font-size: rem(11);
+    line-height: rem(16);
+    text-decoration: none;
+  }
+}
+
+.footer__currency {
+  margin-bottom: rem(32);
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  font-size: rem(18);
+  line-height: rem(24);
+  cursor: pointer;
+}
+
+.footer__catalog-icon {
+  color: #ffffff;
+}
