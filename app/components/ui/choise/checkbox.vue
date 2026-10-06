@@ -38,4 +38,5 @@ const uid = useId()
   </label>
 </template>
 
-<style scoped lang="sass" src="./choise.sass"></style>
+<style scoped lang="scss" src="./choise.scss"></style>
+

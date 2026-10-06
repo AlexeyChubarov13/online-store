@@ -4,7 +4,9 @@ export default defineNuxtConfig({
   modules: ['@nuxt/icon', '@nuxt/image'],
   devtools: { enabled: true }, 
 
-
+  css: [
+    '~/assets/styles/main.scss',
+  ],
 
   devServer: {
     host: '127.0.0.1',

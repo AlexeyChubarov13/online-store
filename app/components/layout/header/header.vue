@@ -1,31 +1,46 @@
+<script setup lang="ts">
+const search = ref('')
+</script>
+
 <template>
     <header class="header">
-      <div class="header__logo">
-        <Icon name="icons:logo" class="header__logo-icon" />
-      </div>
+      <NuxtLink to="/" class="header__logo">
+        <Icon name="icons:logo" class="header__logo-icon " />
+      </NuxtLink>
   
       <div class="header__search">
-        <input type="text" class="header__input" placeholder="Search" />
-        <button type="button">
+        
+        <UiFieldInput
+          v-model="search"
+          class="header__search-field"
+          placeholder="Search"
+          autocomplete="search"
+        />
+
+        <UiButton variant="icon" class="header__search-button" aria-label="Search">
           <Icon name="icons:search" size="20" />
-        </button>
+        </UiButton>
+
       </div>
   
       <div class="header__actions">
-        <button type="button" class="currency__button">
+        <UiButton variant="text" class="header__currency" aria-label="Change currency">
           <span>USD</span>
           <Icon name="icons:arrow" size="8" />
-        </button>
+        </UiButton>
   
-        <button type="button" aria-label="Favorites">
-            <Icon name="icons:favorites" size="20" />
-        </button>
+        <UiButton variant="icon" class="header__action-button" aria-label="Favorites">
+          <Icon name="icons:favorites" size="20" />
+        </UiButton>
   
-        <button type="button" class="cart__button">
-            <Icon name="icons:cart" size="20" />
-        </button>
+        <UiButton variant="icon" class="header__action-button" aria-label="Cart">
+          <Icon name="icons:cart" size="20" />
+        </UiButton>
+        
       </div>
+
     </header>
+
   </template>
 
 <style scoped lang="scss" src="./header.scss"></style>

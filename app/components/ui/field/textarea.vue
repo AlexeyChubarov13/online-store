@@ -58,4 +58,5 @@ const isEmpty = computed(() => model.value === '')
   </label>
 </template>
 
-<style scoped lang="sass" src="./field.sass"></style>
+<style scoped lang="scss" src="./field.scss"></style>
+

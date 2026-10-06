@@ -27,7 +27,9 @@ const footerCategories = [
 <template>
 	<footer class="footer">
 		<div class="footer__brand">
-			<Icon name="icons:logo-footer" class="footer__logo" />
+			<NuxtLink to="/" class="footer__logo">
+  				<Icon name="icons:logo-footer" class="footer__logo-icon" />
+			</NuxtLink>
 
 			<div class="footer__phones">
 				<a href="tel:+78007008573">+7 800 700-85-73</a>

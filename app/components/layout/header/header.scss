@@ -8,20 +8,20 @@
     grid-template-columns: rem(220) minmax(rem(280), 1fr) auto;
     align-items: center;
     column-gap: rem(32);
-  }
   
-  .header__logo {
+  
+  &__logo {
     display: flex;
     align-items: center;
   }
   
-  .header__logo-icon {
+  &__logo-icon {
     width: rem(125);
     height: auto;
     display: block;
   }
   
-  .header__search {
+  &__search {
     max-width: rem(620);
     width: 100%;
     justify-self: end;
@@ -29,7 +29,7 @@
     align-items: center;
   }
   
-  .header__input {
+  &__input {
     width: 100%;
     height: rem(40);
     border: rem(1) solid #eef0f5;
@@ -39,36 +39,17 @@
     outline: none;
   }
   
-  .header__search button {
+  &__search button {
     margin-left: rem(-44);
-    width: rem(40);
-    height: rem(40);
-    border: 0;
-    background: transparent;
-    color: #4b5166;
   }
   
-  .header__actions {
+  &__actions {
     display: flex;
     align-items: center;
     gap: rem(18);
   }
-  
-  .header__actions button,
-  .currency__button,
-  .cart__button {
-    border: 0;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
-  .currency__button {
-    display: flex;
-    align-items: center;
+  &__currency {
     gap: rem(6);
-    border: 0;
-    background: transparent;
-    color: #4b5166;
   }
+}
