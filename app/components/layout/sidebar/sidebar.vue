@@ -37,7 +37,7 @@ const categories = [
 
                 <Icon
                     :name="category.icon"
-                    class="category__icon"
+                    class="category__icon --fill"
                     size="12"
                 />
 

@@ -37,6 +37,7 @@ main {
 
 svg.--fill,
 .--fill svg {
+
   *[fill]:not([fill='none']):not([fill='']) {
     fill: currentColor;
   }
