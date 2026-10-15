@@ -13,6 +13,7 @@ const props = withDefaults(
     required?: boolean
     autocomplete?: string
     mask?: string
+    variant?: 'default' | 'search'
   }>(),
   {
     id: '',
@@ -25,6 +26,7 @@ const props = withDefaults(
     required: false,
     autocomplete: undefined,
     mask: '',
+    variant: 'default',
   },
 )
 
@@ -147,6 +149,7 @@ const onInput = (event: Event) => {
         '--has-label': props.label,
         '--invalid': Boolean(props.error),
         '--disabled': props.disabled,
+        '--search': props.variant === 'search',
       }"
     >
       <span v-if="props.label" class="ui-field__floating-label">{{ props.label }}</span>

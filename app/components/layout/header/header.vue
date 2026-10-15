@@ -12,9 +12,11 @@ const search = ref('')
         
         <UiFieldInput
           v-model="search"
+          variant="search"
+          type="search"
           class="header__search-field"
           placeholder="Search"
-          autocomplete="search"
+          autocomplete="off"
         />
 
         <UiButton variant="icon" class="header__search-button" aria-label="Search">
