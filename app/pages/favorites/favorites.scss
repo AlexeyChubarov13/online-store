@@ -1,0 +1,38 @@
+@use '~/assets/styles/functions' as *;
+
+.favorites {
+  width: 100%;
+  min-width: 0;
+
+  &__breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+    margin-bottom: rem(12);
+    color: var(--color-breadcrumbs);
+    font-size: rem(12);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 rem(24);
+    color: var(--color-dark);
+    font-size: rem(28);
+    line-height: 1.3;
+    font-weight: 600;
+  }
+
+  &__products {
+    display: grid;
+    grid-template-columns: repeat(3, rem(401));
+    gap: rem(24);
+  }
+}

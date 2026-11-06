@@ -3,7 +3,7 @@
 .header {
     height: rem(90);
     padding: 0 rem(40);
-    background: #ffffff;
+    background: var(--color-bg);
     display: grid;
     grid-template-columns: rem(220) minmax(rem(280), 1fr) auto;
     align-items: center;
@@ -28,9 +28,14 @@
     display: flex;
     align-items: center;
   }
+
+  &__search-field {
+    min-width: 0;
+  }
   
   &__search button {
     margin-left: rem(-44);
+    flex-shrink: 0;
   }
   
   &__actions {

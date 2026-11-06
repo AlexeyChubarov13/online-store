@@ -12,7 +12,7 @@
       font-size: rem(12);
       line-height: rem(16);
       font-weight: 400;
-      color: #8387A3
+      color: var(--color-breadcrumbs);
   }
 
   &__breadcrumb--active {
@@ -24,7 +24,7 @@
     font-size: rem(28);
     line-height: 1.2;
     font-weight: 700;
-    color: #46495c;
+    color: var(--color-dark);
   }
 
   &__products {

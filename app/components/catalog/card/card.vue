@@ -1,16 +1,52 @@
 <script setup>
-defineProps({
+const props = defineProps({
   product: {
     type: Object,
-    required: true
-  }
+    required: true,
+  },
+  removable: {
+    type: Boolean,
+    default: false,
+  },
 })
+
+const emit = defineEmits(['remove'])
+
+const { isFavorite, toggleFavorite } = useFavorites()
+
+const selected = computed(() => isFavorite(props.product.id))
+
+const finalPrice = computed(() => {
+  const price = props.product.price
+  const discount = props.product.discountPercentage
+
+  return price - price * discount / 100
+})
+
+const formatPrice = (value) => {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(value)
+}
+
 </script>
 
 <template>
   <article class="card">
+
+    <UiButton
+      v-if="removable"
+      variant="icon"
+      class="card__remove"
+      :aria-label="`Remove ${product.title} from favorites`"
+      @click="emit('remove')"
+    >
+      <Icon name="lucide:x" size="16" />
+    </UiButton>
+
     <NuxtPicture
-      :src="product.image"
+      :src="product.thumbnail"
       :alt="product.title"
       class="card__image"
       format="webp"
@@ -25,25 +61,37 @@ defineProps({
         </p>
 
         <h2 class="card__title">
-          {{ product.title }}
+          <NuxtLink
+            :to="`/product/${product.id}`"
+            class="card__link"
+          >
+            {{ product.title }}
+          </NuxtLink>
         </h2>
       </div>
 
       <div class="card__footer">
-        <button class="card__favorite">
-          <Icon name="icons:favorites" size="20" />
-        </button>
+        <UiButton
+          variant="icon"
+          class="card__favorite --fill"
+          :class="{ '--selected': selected }"
+          :aria-pressed="selected"
+          :aria-label="selected ? 'Remove from favorites' : 'Add to favorites'"
+          @click="toggleFavorite(product)"
+        >
+          <Icon name="icons:favorites" class="--fill" size="20" />
+        </UiButton>
 
         <span class="card__old-price">
-          {{ product.oldPrice }}
+          {{ formatPrice(product.price) }}
         </span>
 
         <span class="card__discount">
-          {{ product.discount }}
+          -{{ product.discountPercentage }}%
         </span>
 
         <span class="card__price">
-          {{ product.price }}
+          {{ formatPrice(finalPrice) }}
         </span>
 
         <button class="card__basket">

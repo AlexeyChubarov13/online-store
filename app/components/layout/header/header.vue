@@ -31,8 +31,12 @@ const search = ref('')
           <Icon name="icons:arrow" size="8" />
         </UiButton>
   
-        <UiButton variant="icon" class="header__action-button" aria-label="Favorites">
-          <Icon name="icons:favorites" size="20" />
+        <UiButton 
+          link to="/favorites"
+          variant="icon" 
+          class="header__action-button" 
+          aria-label="Favorites">
+            <Icon name="icons:favorites" size="20" />
         </UiButton>
   
         <UiButton variant="icon" class="header__action-button" aria-label="Cart">
